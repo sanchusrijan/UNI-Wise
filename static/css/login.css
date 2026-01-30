@@ -1,0 +1,180 @@
+/* login.css */
+
+:root {
+    --brand-primary: #3b82f6;
+    --brand-dark: #1e293b;
+    --text-main: #0f172a;
+    --text-soft: #64748b;
+    --border-color: rgba(255, 255, 255, 0.4);
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    /* Professional Font Variable */
+    --font-heading: 'Bitcount Ink', 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    /* YOUR CUSTOM GRADIENT */
+    background: linear-gradient(225deg, #f7e9f3 0.000%, #e7f3ff 16.667%, #ddfaff 33.333%, #e5fbeb 50.000%, #f5f6dc 66.667%, #fbede0 83.333%, #f0e3f4 100.000%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-bar {
+    height: 5px;
+    background: linear-gradient(90deg, var(--brand-primary), #06b6d4);
+    width: 100%;
+}
+
+.page-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* THE GLASS CARD */
+.auth-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color);
+    padding: 3rem;
+    border-radius: 28px;
+    max-width: 420px;
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.tagline {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--brand-dark);
+    letter-spacing: -2px;
+}
+
+/* INPUTS */
+.input-group {
+    margin-bottom: 1.25rem;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--brand-dark);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.5);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.input-group input:focus {
+    outline: none;
+    background: #fff;
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+/* PRIMARY BUTTON */
+.main-cta {
+    background-color: var(--brand-dark);
+    color: white;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.main-cta:hover {
+    background-color: var(--brand-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+}
+
+/* SECONDARY BUTTON (FIXED) */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--brand-dark);
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 10px;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-color: var(--brand-primary);
+    color: var(--brand-primary);
+}
+
+.full-width {
+    width: 100%;
+    display: block;
+}
+
+.status-msg {
+    font-size: 0.85rem;
+    text-align: center;
+    min-height: 1.5rem;
+    margin: 10px 0;
+}
+
+.auth-footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.auth-footer p {
+    font-size: 1rem;
+    color: var(--text-soft);
+    margin-bottom: 8px;
+}
+
+.minimal-footer {
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+}

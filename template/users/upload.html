@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Document | UNI WISE</title>
+    <link rel="stylesheet" href="{% static 'css/upload.css' %}">
+</head>
+<body>
+
+    <div class="upload-container">
+        <h2>Upload Document</h2>
+
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file" id="fileInput" required>
+            <button type="submit">Upload</button>
+        </form>
+
+        <p id="status"></p>
+    </div>
+
+    <script src="{% static 'js/upload.js' %}" defer></script>
+
+</body>
+</html>

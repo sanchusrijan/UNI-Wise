@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | UNI WISE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <div class="top-bar"></div>
+
+    <main class="page-wrapper auth-center">
+        <div class="container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <div class="tagline">Welcome Back</div>
+                    <h1 class="logo-text">UNI-WISE</h1>
+                    <p>Access your personalized AI study dashboard.</p>
+                </div>
+
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="name@university.edu" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="••••••••" required>
+                    </div>
+
+                    <p id="status" class="status-msg"></p>
+
+                    <button type="submit" class="main-cta full-width">
+                        Sign In
+                    </button>
+                </form>
+
+                <div class="auth-footer">
+                    <p>New to Uni Wise?</p>
+                    <button id="registerBtn" class="btn-secondary full-width">
+                        Create an account
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="minimal-footer">
+        <div class="container">
+            &copy; 2026 UNI WISE. Academic Intelligence Platform.
+        </div>
+    </footer>
+
+    <script src="{% static 'js/login.js' %}"></script>
+</body>
+</html>

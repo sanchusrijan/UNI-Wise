@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | UNI WISE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <div class="top-bar"></div>
+
+    <main class="page-wrapper">
+        <section class="hero-wrapper">
+            <div class="container hero-grid">
+                
+                <div class="hero-content">
+                    <div class="tagline">Academic Intelligence</div>
+                    <h1 class="logo-text">UNI WISE</h1>
+                    <p>
+                        Master your documents with AI-driven summaries. 
+                        Simplify your study flow and capture key insights in seconds.
+                    </p>
+                    
+                    <button id="summarizeBtn" class="main-cta">
+                        Summarize Documents
+                    </button>
+                </div>
+
+                <div class="hero-visual">
+                    <img src="https://illustrations.popsy.co/white/reading-a-book.svg" alt="Illustration">
+                </div>
+                
+            </div>
+        </section>
+
+        <footer class="minimal-footer">
+            <div class="container">
+                &copy; 2026 UNI WISE. Built for the future of learning.
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        document.getElementById("summarizeBtn").addEventListener("click", () => {
+            window.location.href = "/summarize/web/";
+        });
+    </script>
+</body>
+</html>

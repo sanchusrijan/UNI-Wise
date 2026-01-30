@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summarize | UNI WISE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/summarize.css' %}">
+</head>
+<body>
+    <div class="top-bar"></div>
+
+    <div class="page-wrapper">
+        <header class="brand-nav">
+            <h1>UNI WISE</h1>
+        </header>
+
+        <div class="layout">
+            
+            <aside class="sidebar">
+                <h3>Your Documents</h3>
+                <ul id="documentList">
+                    <li class="active">Lecture_Notes_Jan.pdf</li>
+                    <li>Research_Paper_v2.pdf</li>
+                </ul>
+            </aside>
+
+            <main class="content-container">
+                <div class="card">
+                    <h2>Summarize Document</h2>
+
+                    <div id="dropZone" class="drop-zone">
+                        <p>Drag & drop a document here<br>or <strong>click to upload</strong></p>
+                        <input type="file" id="fileInput" hidden>
+                    </div>
+
+                    <button id="summarizeBtn" class="btn-primary" disabled>
+                        Summarize
+                    </button>
+
+                    <p id="status" class="status-para"></p>
+
+                    <div id="summaryOutput" class="summary-box">
+                        <p style="color: var(--text-soft); font-style: italic; text-align: center;">
+                            The generated summary will appear here.
+                        </p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="{% static 'js/auth.js' %}" defer></script>
+    <script src="{% static 'js/summarize.js' %}" defer></script>
+</body>
+</html>
