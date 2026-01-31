@@ -3,16 +3,83 @@
 
 UNI-Wise is a student-focused web platform designed to organize academic tools and resources in one place. The goal is to simplify student workflows and improve productivity through a clean, minimal, and scalable web application.
 
+# ✅✅✅✅✅✅ Pls review the setup given below to try the website for ur self.✅✅✅✅✅✅✅
+
+---
+
+## 🚧 Project Status
+
+UNI-Wise is **currently under active development** and is **not yet finished**.  
+Several advanced features are in progress and will be added in future updates.
+
+---
+
+## 🔮 Features Under Development
+
+- 🧠 **Advanced AI Summarization**
+  - NLP-based summarization of notes and documents
+  - Extraction of key points and highlights
+
+- 🖼️ **Image Processing**
+  - Processing images from study materials
+  - Support for scanned notes and visual content
+
+- 🧪 **Quiz Generation**
+  - Automatic quiz creation from notes and documents
+  - Question generation for self-assessment and revision
+
+- 📊 **Smart Study Tools**
+  - Personalized learning assistance
+  - Intelligent content recommendations
+
+---
+
+## 🎯 Development Note
+
+The current version focuses on building a **strong, scalable foundation**.  
+Advanced AI-driven features are being developed incrementally and will be integrated once stable.
+
 ---
 
 ## 🚀 Current Features
 
-- 📊 **Student Dashboard** – Centralized view of student-related tools  
-- 📝 **Notes & Resource Management** – Upload and organize academic content  
-- 📅 **Task & Deadline Tracking** – Keep track of assignments and schedules  
-- 🎨 **Modern UI** – Clean, responsive, and student-friendly interface  
-- 🔐 **Secure Backend** – Built with scalability and best practices in mind  
+- 🔐 **Authentication**
+  - User login and signup system
+  - Secure access to personalized features
 
+- 🏠 **Home Page**
+  - Central landing page for authenticated users
+  - Easy navigation to different modules
+
+- 🧠 **Summarizer (Base Structure)**
+  - Dedicated summarizer module
+  - UI and backend structure in place for future AI-based summarization
+  - Currently supports text submission and request handling
+
+- 📂 **Files Tab**
+  - Separate section to view uploaded files
+  - Organized display of user documents and resources
+
+- ⬆️ **File Upload Feature**
+  - Users can upload files for storage and future processing
+  - Integrated with backend for document handling
+ 
+ - 👤 **User Management**
+  - User authentication and profile handling
+  - Secure backend using Django best practices
+
+- 📂 **Document Management**
+  - Store and manage academic documents
+  - Structured handling of student resources
+
+- 🎨 **Frontend Integration**
+  - HTML templates with static assets
+  - Clean and responsive UI design
+
+- ⚙️ **Backend Architecture**
+  - Modular Django apps
+  - SQLite database for development
+ 
 ---
 
 ## 🛠️ Tech Stack
@@ -32,25 +99,6 @@ UNI-Wise is a student-focused web platform designed to organize academic tools a
 
 ---
 
-## 🚀 Current Features
-
-- 👤 **User Management**
-  - User authentication and profile handling
-  - Secure backend using Django best practices
-
-- 📂 **Document Management**
-  - Store and manage academic documents
-  - Structured handling of student resources
-
-- 🎨 **Frontend Integration**
-  - HTML templates with static assets
-  - Clean and responsive UI design
-
-- ⚙️ **Backend Architecture**
-  - Modular Django apps
-  - SQLite database for development
-
----
 
 ## 📂 Project Structure
 
