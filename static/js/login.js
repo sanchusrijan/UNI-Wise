@@ -1,12 +1,9 @@
 
-// console.log("LOGIN JS VERSION: HOME REDIRECT");
-// alert("login.js loaded - home redirect");
-
 const loginForm = document.getElementById("loginForm");
 const statusPara = document.getElementById("status");
 
 loginForm.addEventListener("submit", async (e) => {
-    e.preventDefault(); // 🚨 STOP normal Django/DRF login
+    e.preventDefault();
 
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
@@ -36,13 +33,10 @@ loginForm.addEventListener("submit", async (e) => {
 
         const data = await response.json();
 
-        // 🔑 STORE TOKENS (MOST IMPORTANT PART)
         localStorage.setItem("access", data.access);
         localStorage.setItem("refresh", data.refresh);
 
         statusPara.innerText = "Login successful";
-
-        // 🔁 Redirect to home page
         window.location.href = "/users/home/";
 
     } catch (error) {

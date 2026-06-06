@@ -25,7 +25,8 @@
 
 body {
     font-family: var(--font-body);
-    background-color: var(--surface-bg);
+    background: linear-gradient(225deg, #f7e9f3 0.000%, #e7f3ff 16.667%, #ddfaff 33.333%, #e5fbeb 50.000%, #f5f6dc 66.667%, #fbede0 83.333%, #f0e3f4 100.000%);
+
     color: var(--text-main);
     line-height: 1.6;
     overflow-x: hidden;
@@ -53,24 +54,24 @@ body {
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 3rem;
     align-items: center;
 }
 
 /* TYPOGRAPHY - Bitcount Ink applied to Headings */
 .hero-content h1 {
     font-family: var(--font-heading);
-    font-size: clamp(3rem, 5vw, 4.5rem);
-    font-weight: 700;
+    font-size: clamp(5.5rem, 5vw, 4.5rem);
+    font-weight: 600;
     line-height: 1.1;
     color: var(--brand-dark);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
     letter-spacing: -0.02em;
 }
 
 .hero-content p {
-    font-size: 1.25rem;
+    font-size: 1rem;
     color: var(--text-soft);
     max-width: 540px;
     margin-bottom: 2.5rem;
@@ -87,8 +88,9 @@ body {
     background-color: var(--brand-primary);
     color: white;
     padding: 1rem 2.5rem;
-    border-radius: 8px;
+    border-radius: 40px;
     font-weight: 600;
+    font-size: 1.05rem;
     text-decoration: none;
     border: 1px solid var(--brand-primary);
     transition: all 0.2s ease;
@@ -119,16 +121,17 @@ body {
 
 /* VISUAL ELEMENT - Ready for your Illustration or Dashboard Preview */
 .hero-visual {
+    margin-top: 70px;
     position: relative;
     background: var(--surface-subtle);
     border-radius: 24px;
-    height: 500px;
+    height: 375px;
     border: 1px solid var(--border-color);
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 200px 20px -5px rgba(0, 0, 0, 0.05);
 }
 
 .hero-visual img {

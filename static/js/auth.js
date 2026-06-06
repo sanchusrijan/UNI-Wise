@@ -1,60 +1,79 @@
-// static/js/auth.js
-
-/**
- * Refresh access token using refresh token
- */
 async function refreshAccessToken() {
     const refresh = localStorage.getItem("refresh");
-
     if (!refresh) {
-        localStorage.clear();
-        window.location.href = "/accounts/login/";
         return null;
     }
-
-    const response = await fetch("/api/users/token/refresh/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ refresh })
-    });
-
-    if (!response.ok) {
-        localStorage.clear();
-        window.location.href = "/accounts/login/";
+    try {
+        const response = await fetch("/api/users/token/refresh/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ refresh })
+        });
+        if (!response.ok) {
+            return null;
+        }
+        const data = await response.json();
+        localStorage.setItem("access", data.access);
+        return data.access;
+    } catch (error) {
+        console.error("Token refresh failed:", error);
         return null;
     }
-
-    const data = await response.json();
-    localStorage.setItem("access", data.access);
-    return data.access;
 }
 
-
-/**
- * Fetch wrapper with auto-refresh
- */
 async function fetchWithAuth(url, options = {}) {
-    let token = localStorage.getItem("access");
-
-    if (!token) {
-        window.location.href = "/accounts/login/";
-        return;
+    let access = localStorage.getItem("access");
+    if (!access) {
+        access = await refreshAccessToken();
+        if (!access) {
+            logoutUser();
+            return;
+        }
     }
-
     options.headers = {
-        ...options.headers,
-        Authorization: "Bearer " + token
+        ...(options.headers || {}),
+        "Authorization": "Bearer " + access
     };
-
     let response = await fetch(url, options);
-
     if (response.status === 401) {
         const newAccess = await refreshAccessToken();
-        if (!newAccess) return;
-
+        if (!newAccess) {
+            logoutUser();
+            return;
+        }
         options.headers.Authorization = "Bearer " + newAccess;
         response = await fetch(url, options);
     }
-
     return response;
 }
+
+async function initializeAuth() {
+    const access = localStorage.getItem("access");
+    const refresh = localStorage.getItem("refresh");
+    if (!refresh) {
+        redirectToLogin();
+        return;
+    }
+    if (!access) {
+        const newAccess = await refreshAccessToken();
+        if (!newAccess) {
+            logoutUser();
+        }
+    }
+}
+
+function redirectToLogin() {
+    window.location.href = "/accounts/login/";
+}
+
+function logoutUser() {
+    localStorage.removeItem("access");
+    localStorage.removeItem("refresh");
+    redirectToLogin();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    initializeAuth();
+});

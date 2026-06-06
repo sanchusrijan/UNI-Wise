@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User , Document
+from .models import User, Document
 
 
 class RegisterSerializer(serializers.ModelSerializer):
@@ -18,13 +18,17 @@ class RegisterSerializer(serializers.ModelSerializer):
             name=validated_data['name'],
             password=validated_data['password']
         )
-    
+
+
 class DocumentUploadSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Document
-        fields = ["title","file"]
+        fields = ["title", "file"]
+
 
 class DocumentListSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Document
         fields = ["id", "title", "file", "uploaded_at"]

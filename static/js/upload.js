@@ -1,5 +1,3 @@
-console.log("upload.js loaded");
-
 const uploadForm = document.getElementById("uploadForm");
 const fileInput = document.getElementById("fileInput");
 const statusPara = document.getElementById("status");
@@ -40,7 +38,6 @@ uploadForm.addEventListener("submit", async (e) => {
 
         statusPara.innerText = "Upload successful! Document ID: " + data.id;
 
-        // Optional: redirect after upload
         setTimeout(() => {
             window.location.href = "/summarize/web/";
         }, 1500);
